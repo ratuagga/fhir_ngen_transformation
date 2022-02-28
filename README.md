@@ -1,7 +1,7 @@
-#FHIR NGEN TRANSFORMATION
->Process to take data from a FHIR format json file to BigQuery Table.
+# FHIR NGEN TRANSFORMATION
+> Process to take data from a FHIR format json file to BigQuery Table.
 
-###Flow walk through:
+### Flow walk through:
 1. Any new FHIR-Formatted JSON file (Input File) when added into the GCP Bucket, will trigger a Cloud Function (Entry point = 'fhir_to_omop_trigger()')
 2. First task is to map the 'Input File' to corresponding OMOP-Format ('OMOP Mapping'). 
    1. This piece is currently under development while this document is being written.
@@ -14,7 +14,7 @@
 5. Archive 'Output File' (Moving the 'Output File' in the same Bucket where 'Input File' was moved).
 
 
-###Sample File Locations and BigQuery Table Name:
+### Sample File Locations and BigQuery Table Name:
 1. **Input File:** gs://*GCP_bucket*/*Input_file_folder*/*Input_file.json*
 2. **Output File:** gs://*GCP_bucket*/generated_csv_files/
 3. **Mapping File:** gs://*GCP_bucket*/mapping_files/*Input_file_name_without_extension*_mapping.json
@@ -24,6 +24,6 @@
    1. Table Schema ***MUST*** match the OMOP-Mapping of the corresponding Output File.
 
 
-###Supporting Files:
+### Supporting Files:
 1. Test Input Json
 2. Mapping File for FHIR-to-OMOP. 
