@@ -1,0 +1,20 @@
+{
+    "observation_id": "fullUrl",
+    "person_id": "id",
+    "observation_concept_id": "status",
+    "observation_date": "div",
+    "observation_datetime": "url",
+    "observation_type_concept_id": "system",
+    "value_as_number": "code",
+    "value_as_string": "valueString",
+    "value_as_concept_id": "display",
+    "qualifier_concept_id": "value",
+    "unit_concept_id": "use",
+    "provider_id": "family",
+    "visit_occurrence_id": "given",
+    "visit_detail_id": "",
+    "observation_source_value": "telecom",
+    "observation_source_concept_id": "gender",
+    "unit_source_value": "birthDate",
+    "qualifier_source_value": "Address"
+}

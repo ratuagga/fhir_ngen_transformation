@@ -1,0 +1,6 @@
+# Function dependencies, for example:
+# package>=version
+gcsfs~=2022.2.0
+pandas~=1.3.5
+google-cloud-storage
+google-cloud-bigquery
