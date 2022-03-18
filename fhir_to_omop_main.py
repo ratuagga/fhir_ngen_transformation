@@ -2,19 +2,18 @@
 import gcsfs
 import json
 import pandas
-from collections import namedtuple
 from utils import check_file_exist_in_gcs, archive_processed_file
 
-  
+
 def read_input_json(path_to_file: str,
                     gcs_file_system) -> dict:
     """Reads input json file into python dictionary."""
     try:
         with gcs_file_system.open(path_to_file) as file:
-          json_dict = json.load(file)
+            json_dict = json.load(file)
     except:
         raise Exception(f"Reading {path_to_file} file encountered an error.")
-  
+
     return json_dict
 
 
@@ -45,7 +44,7 @@ def create_mapped_dataframe(mapping_file: str,
     """Map the input_data to create a mapped output_dataframe."""
     try:
         with gcs_file_system.open(mapping_file) as file:
-          mapping_dict = json.load(file)
+            mapping_dict = json.load(file)
     except:
         raise Exception(f"Reading {mapping_file} file encountered an error.")
 
