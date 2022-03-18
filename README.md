@@ -15,15 +15,16 @@
 
 
 ### Sample File Locations and BigQuery Table Name:
-1. **Input File:** gs://*GCP_bucket*/*Input_file_folder*/*Input_file.json*
+1. **Input File:** gs://*GCP_bucket*/*Input_file_folder*/*Input_file.json*.
 2. **Output File:** gs://*GCP_bucket*/generated_csv_files/
-   1. If the folder name is changed, update ***fhir_to_omop_main.py/run_fhir_to_omop()/generated_csv_path***
+   1. If the folder name is changed, update ***fhir_to_omop_main.py/run_fhir_to_omop()/generated_csv_path***.
 3. **Mapping File:** gs://*GCP_bucket*/mapping_files/*Input_file_name_without_extension*_mapping.json
-   1. If the folder name is changed, update ***fhir_to_omop_main.py/run_fhir_to_omop()/path_to_mapping_file***
+   1. If the folder name is changed, update ***fhir_to_omop_main.py/run_fhir_to_omop()/path_to_mapping_file***.
 4. **Archive Bucket:** gs://test_bucket_for_cloud_trigger_archive_files/
-   1. If this bucket name is changed, update ***utils.py/archive_processed_file()/destination_bucket***
+   1. If this bucket name is changed, update ***utils.py/archive_processed_file()/destination_bucket***.
 5. **BigQuery Table:** project_id.test_csv_load_dataset.*Input_File_name_without_extension*
    1. Table Schema ***MUST*** match the OMOP-Mapping of the corresponding Output File.
+   2. If the dataset name is changed, update ***csv_to_bq_main.py/table_id***.
 
 
 ### Supporting Files:
