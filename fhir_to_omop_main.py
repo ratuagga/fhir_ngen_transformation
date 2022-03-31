@@ -2,6 +2,8 @@
 import gcsfs
 import json
 import pandas
+import datetime
+import pytz
 from utils import check_file_exist_in_gcs, archive_processed_file
 
 
@@ -31,7 +33,10 @@ def data_convert(element, data_type):
         elif data_type == "date" and isinstance(element, str):
             element = element.split("T")[0]
         elif data_type == "timestamp" and isinstance(element, str):
-            pass
+            # Input sample: "2009-07-04T17:20:00.515-04:00"
+            inp_ts_format = "%Y-%m-%dT%H:%M:%S.%f%z"
+            date = datetime.datetime.strptime(element, inp_ts_format)
+            element = str(date.astimezone(pytz.UTC)).replace("+00:00", " UTC")
     except:
         raise Exception(f"Error during converting {element} in {data_type}.")
 
